@@ -2,6 +2,7 @@ import { useState } from 'react'
 import todo_BN from './assets/rhefZ3.png'
 import main_BN from './assets/tj3Bdk.png'
 import './App.css'
+import { HashRouter, NavLink, Route, Routes } from 'react-router-dom'
 
 
 
@@ -17,13 +18,16 @@ function LoginPage() {
           <div>
             <form className="formControls" action="index.html">
               <h2 className="formControls_txt">最實用的線上代辦事項服務</h2>
-              <label className="formControls_label" for="email">Email</label>
+              <label className="formControls_label" htmlFor="email">Email</label>
               <input className="formControls_input" type="text" id="email" name="email" placeholder="請輸入 email" required />
               <span>此欄位不可留空</span>
-              <label className="formControls_label" for="pwd">密碼</label>
+              <label className="formControls_label" htmlFor="pwd">密碼</label>
               <input className="formControls_input" type="password" name="pwd" id="pwd" placeholder="請輸入密碼" required />
-              <input className="formControls_btnSubmit" type="button" onclick="javascript:location.href='#todoListPage'" value="登入" />
-              <a className="formControls_btnLink" href="#signUpPage">註冊帳號</a>
+              <input className="formControls_btnSubmit" type="button" onClick={() => { }} value="登入" />
+              {/* <a className="formControls_btnLink" href="#signUpPage">註冊帳號</a> */}              
+              <NavLink to="/signUp">
+                <div className="formControls_btnLink">註冊帳號</div>
+              </NavLink>
             </form>
           </div>
         </div>
@@ -44,16 +48,19 @@ function SignUpPage() {
           <div>
             <form className="formControls" action="index.html">
               <h2 className="formControls_txt">註冊帳號</h2>
-              <label className="formControls_label" for="email">Email</label>
+              <label className="formControls_label" htmlFor="email">Email</label>
               <input className="formControls_input" type="text" id="email" name="email" placeholder="請輸入 email" required />
-              <label className="formControls_label" for="name">您的暱稱</label>
+              <label className="formControls_label" htmlFor="name">您的暱稱</label>
               <input className="formControls_input" type="text" name="name" id="name" placeholder="請輸入您的暱稱" />
-              <label className="formControls_label" for="pwd">密碼</label>
+              <label className="formControls_label" htmlFor="pwd">密碼</label>
               <input className="formControls_input" type="password" name="pwd" id="pwd" placeholder="請輸入密碼" required />
-              <label className="formControls_label" for="pwd">再次輸入密碼</label>
-              <input className="formControls_input" type="password" name="pwd" id="pwd" placeholder="請再次輸入密碼" required />
-              <input className="formControls_btnSubmit" type="button" onclick="javascript:location.href='#todoListPage'" value="註冊帳號" />
-              <a className="formControls_btnLink" href="#loginPage">登入</a>
+              <label className="formControls_label" htmlFor="pwd">再次輸入密碼</label>
+              <input className="formControls_input" type="password" name="pwd" id="pwd2" placeholder="請再次輸入密碼" required />
+              <input className="formControls_btnSubmit" type="button" onClick={() => { }} value="註冊帳號" />
+              {/* <a className="formControls_btnLink" href="#loginPage">登入</a> */}
+              <NavLink to="/login">
+                <div className="formControls_btnLink">登入</div>
+              </NavLink>
             </form>
           </div>
         </div>
@@ -160,13 +167,18 @@ function TodoListPage() {
 
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <LoginPage /> 
-      <SignUpPage />
-      <TodoListPage />  
+      <HashRouter>
+        <Routes>
+          <Route path='/' element={<LoginPage />} />
+          <Route path='/login' element={<LoginPage />} />
+          <Route path='/signUp' element={<SignUpPage />} />
+          <Route path='/todoList' element={<TodoListPage />} />
+        </Routes>
+      </HashRouter>
     </>
   )
 }
