@@ -11,8 +11,8 @@ function LoginPage() {
       <div id="loginPage" className="bg-yellow">
         <div className="conatiner loginPage vhContainer ">
           <div className="side">
-            <a href="#"><img className="logoImg" src="public/images/rhefZ3.png" alt="" /></a>
-            <img className="d-m-n" src="public/images/tj3Bdk.png" alt="workImg" />
+            <a href="#"><img className="logoImg" src="src/assets/rhefZ3.png" alt="" /></a>
+            <img className="d-m-n" src="src/assets/tj3Bdk.png" alt="workImg" />
           </div>
           <div>
             <form className="formControls" action="index.html">
@@ -38,8 +38,8 @@ function SignUpPage() {
       <div id="signUpPage" className="bg-yellow">
         <div className="conatiner signUpPage vhContainer">
           <div className="side">
-            <a href="#"><img className="logoImg" src="public/images/rhefZ3.png" alt="" /></a>
-            <img className="d-m-n" src="public/images/tj3Bdk.png" alt="workImg" />
+            <a href="#"><img className="logoImg" src="src/assets/rhefZ3.png" alt="" /></a>
+            <img className="d-m-n" src="src/assets/tj3Bdk.png" alt="workImg" />
           </div>
           <div>
             <form className="formControls" action="index.html">
@@ -164,8 +164,8 @@ function App() {
 
   return (
     <>
-      {/* <LoginPage />  */}
-      {/* <SignUpPage /> */}
+      <LoginPage /> 
+      <SignUpPage />
       <TodoListPage />  
     </>
   )
