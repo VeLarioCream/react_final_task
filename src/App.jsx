@@ -77,14 +77,9 @@ function Layout({ isLogin }) {
 }
 
 function LoginPage({ isLogin, setIsLogin }) {
+  setIsLogin(false)
   const [isLoading, setIsLoading] = useState(false)
   let navigate = useNavigate();
-  useEffect(() => {
-    // 判斷登入狀態並路由至正確頁面
-    if (isLogin) {
-      navigate('/todolist')
-    }
-  }, [isLogin])
 
   const [formData, setFormData] = useState({
     email: '',
