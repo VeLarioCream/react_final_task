@@ -244,7 +244,7 @@ return (
                   return (
                     <li key={item.id}>
                       <label className="todoList_label">
-                        <input className="todoList_input" type="checkbox" value={item.status} onClick={(e) => {
+                        <input className="todoList_input" type="checkbox" checked={item.status} onClick={(e) => {
                           handleToggle(item.id)
                         }} />
                         <span>{item.content}</span>
