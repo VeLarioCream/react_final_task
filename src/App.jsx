@@ -6,6 +6,7 @@ import Layout from './views/Layout'
 import LoginPage from './views/LoginPage'
 import SignUpPage from './views/SignUpPage'
 import TodoListPage from './views/TodoListPage'
+import NotFound from './views/NotFound'
 
 
 // 取用環境變數的API URL
@@ -28,6 +29,7 @@ function App() {
           <Route path='signup' element={<SignUpPage />} />
         </Route>
         <Route path='/todoList' element={<TodoListPage isLogin={isLogin} setIsLogin={setIsLogin} />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
     </>
   )
